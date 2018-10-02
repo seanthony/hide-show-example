@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hide show example</title>
+</head>
+
+<body>
+    <button onclick="hideShowParts('div-1')">show 1</button>
+    <button onclick="hideShowParts('div-2')">show 2</button>
+    <button onclick="hideShowParts('div-3')">show 3</button>
+    <div class="div-hide" id="div-1" hidden>
+        <h1 style="color:red;">hello world!</h1>
+    </div>
+    <div class="div-hide" id="div-2" hidden>
+        <h1 style="color:blue;">hello other world!</h1>
+    </div>
+    <div class="div-hide" id="div-3" hidden>
+        <h1 style="color:green;">hello other other world!</h1>
+    </div>
+    <script>
+        function hideShowParts(idName) {
+            var id = '#' + idName;
+            var divShow = document.querySelector(id);
+            var allDivs = document.querySelectorAll('.div-hide');
+            console.log(allDivs);
+            allDivs.forEach(function (div) {
+                div.setAttribute('hidden', "");
+            })
+            divShow.removeAttribute('hidden');
+        }
+    </script>
+
+
+</body>
+
+</html>
